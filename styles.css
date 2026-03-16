@@ -159,7 +159,12 @@ select {
     display: grid;
     grid-template-columns: 1.12fr 0.88fr;
     gap: 2rem;
-    align-items: center;
+    align-items: start;
+}
+
+.hero-copy,
+.hero-card-wrap {
+    align-self: start;
 }
 
 .eyebrow {
@@ -176,6 +181,10 @@ select {
     color: var(--success);
 }
 
+.hero-copy .eyebrow {
+    margin-bottom: 0.45rem;
+}
+
 .hero-copy h1,
 .section-heading h2,
 .split-panel h2,
@@ -186,8 +195,7 @@ select {
 }
 
 .hero-copy h1 {
-    font-size: clamp(2.6rem, 5vw, 4.9rem);
-    max-width: 11ch;
+    font-size: clamp(1.3rem, 2.5vw, 2.45rem);
 }
 
 .lead,
@@ -234,8 +242,7 @@ select {
 .plan-name,
 .featured-badge,
 .payment-note,
-.micro-note,
-.toggle-text {
+.micro-note {
     font-size: 0.92rem;
 }
 
@@ -251,8 +258,7 @@ select {
 .info-card,
 .pricing-card,
 .faq-item,
-.timeline-item,
-.rush-banner {
+.timeline-item {
     background: var(--panel);
     border: 1px solid var(--line);
     backdrop-filter: blur(14px);
@@ -438,7 +444,7 @@ select {
 .section-heading h2,
 .split-panel h2,
 .cta-panel h2 {
-    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-size: clamp(1rem, 1.8vw, 1.7rem);
 }
 
 .cards-grid {
@@ -471,7 +477,7 @@ select {
 .pricing-card h3,
 .timeline-item h3 {
     margin: 0 0 0.7rem;
-    font-size: 1.28rem;
+    font-size: 0.8rem;
     letter-spacing: -0.02em;
 }
 
@@ -543,65 +549,6 @@ select {
     font-weight: 800;
 }
 
-.rush-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    border-radius: var(--radius);
-    padding: 1rem 1.2rem;
-    margin-bottom: 1.3rem;
-}
-
-.rush-banner p {
-    margin: 0.2rem 0 0;
-    color: var(--muted);
-}
-
-.toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    cursor: pointer;
-}
-
-.toggle input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.toggle-ui {
-    width: 58px;
-    height: 32px;
-    border-radius: 999px;
-    display: inline-block;
-    position: relative;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid var(--line);
-    transition: background 0.25s ease;
-}
-
-.toggle-ui::after {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    top: 3px;
-    left: 4px;
-    border-radius: 50%;
-    background: white;
-    transition: transform 0.25s ease;
-}
-
-.toggle input:checked+.toggle-ui {
-    background: linear-gradient(135deg, rgba(114, 227, 255, 0.8), rgba(90, 166, 255, 0.9));
-}
-
-.toggle input:checked+.toggle-ui::after {
-    transform: translateX(25px);
-}
-
 .pricing-grid {
     display: grid;
     gap: 1.2rem;
@@ -611,6 +558,8 @@ select {
 
 .pricing-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     border-radius: calc(var(--radius) + 2px);
     padding: 1.45rem;
 }
@@ -681,8 +630,65 @@ select {
     font-size: 1.3rem;
 }
 
-.paypal-form {
+.package-select {
     margin-top: auto;
+}
+
+.checkout-panel {
+    margin-top: 1.4rem;
+    padding: 1.5rem;
+}
+
+.checkout-copy h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+}
+
+.checkout-copy p:last-child {
+    margin: 0;
+    color: var(--muted);
+}
+
+.paypal-checkout-form {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.form-field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.form-field span {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    outline: none;
+}
+
+.form-field input::placeholder {
+    color: var(--muted);
+}
+
+.form-field input:focus,
+.form-field select:focus {
+    border-color: rgba(114, 227, 255, 0.65);
+    box-shadow: 0 0 0 3px rgba(114, 227, 255, 0.15);
+}
+
+.form-field select option {
+    color: #07111f;
 }
 
 .payment-note {
@@ -803,6 +809,14 @@ select {
     font-size: 0.92rem;
 }
 
+.nav-buy-now {
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #03101d;
+    box-shadow: 0 20px 45px rgba(114, 227, 255, 0.34);
+}
+
 .btn-lg {
     padding: 1rem 1.25rem;
     font-size: 1rem;
@@ -823,10 +837,6 @@ select {
     .split-panel,
     .cta-panel {
         grid-template-columns: 1fr;
-    }
-
-    .hero-copy h1 {
-        max-width: 13ch;
     }
 
     .split-panel {
@@ -859,7 +869,6 @@ select {
         display: flex;
     }
 
-    .rush-banner,
     .timeline-item,
     .footer-inner {
         grid-template-columns: 1fr;
@@ -890,7 +899,7 @@ select {
     }
 
     .hero-copy h1 {
-        font-size: 2.45rem;
+        font-size: 1.3rem;
         max-width: none;
     }
 

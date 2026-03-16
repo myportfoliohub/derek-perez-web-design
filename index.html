@@ -43,7 +43,7 @@
                     <a href="#pricing">Pricing</a>
                     <a href="#faq">FAQ</a>
                     <a href="#contact">Contact</a>
-                    <a class="btn btn-sm btn-primary" href="#pricing">Buy Now</a>
+                    <a class="btn btn-sm btn-primary nav-buy-now" href="#pricing">Buy Now</a>
                 </nav>
             </div>
         </header>
@@ -59,7 +59,7 @@
                         </h1>
                         <p class="lead">
                             I’m Derek Perez, a software engineer with 20+ years in .NET development.
-                            I now combine engineering experience with AI and automation to build
+                            I combine engineering experience with AI and automation to build
                             polished personal websites quickly, affordably, and with a sharp eye
                             for presentation.
                         </p>
@@ -76,7 +76,7 @@
                         <ul class="hero-points" aria-label="Key benefits">
                             <li>Free hosting included</li>
                             <li>3 business day turnaround</li>
-                            <li>Same-day rush option available</li>
+                            <li>Secure PayPal checkout</li>
                         </ul>
                     </div>
 
@@ -219,8 +219,8 @@
                             <div>
                                 <h3>Delivery and hosting</h3>
                                 <p>
-                                    Standard turnaround is 3 business days. Clients can also add a rush
-                                    option for same-day delivery. Hosting is included at no extra cost.
+                                    Standard turnaround is 3 business days. Hosting is included at no
+                                    extra cost, and work begins once checkout and materials are in.
                                 </p>
                             </div>
                         </article>
@@ -240,8 +240,8 @@
                             <p class="eyebrow muted">Turnaround</p>
                             <ul class="check-list">
                                 <li>Standard delivery: 3 business days</li>
-                                <li>Rush delivery: same day</li>
-                                <li>Rush add-on fee: $29</li>
+                                <li>Work starts after checkout is complete</li>
+                                <li>Hosting included at no extra cost</li>
                             </ul>
                         </div>
                     </div>
@@ -254,21 +254,9 @@
                         <p class="eyebrow">Pricing</p>
                         <h2>Flat-rate packages with an easy path to checkout</h2>
                         <p>
-                            Visitors can choose a package, optionally add rush delivery, and pay
-                            directly through PayPal.
+                            Choose a package, add a short summary and style direction, and continue
+                            securely to PayPal.
                         </p>
-                    </div>
-
-                    <div class="rush-banner">
-                        <div>
-                            <strong>Add rush delivery</strong>
-                            <p>Same-day delivery for an additional $29.</p>
-                        </div>
-                        <label class="toggle">
-                            <input type="checkbox" id="rushToggle" />
-                            <span class="toggle-ui"></span>
-                            <span class="toggle-text">Enable rush pricing</span>
-                        </label>
                     </div>
 
                     <div class="pricing-grid">
@@ -277,7 +265,7 @@
                                 <p class="plan-name">Basic</p>
                                 <h3>One-page portfolio site</h3>
                                 <div class="price-row">
-                                    <span class="price" data-price-display data-base-price="100">$100</span>
+                                    <span class="price">$100</span>
                                     <span class="price-note">flat rate</span>
                                 </div>
                                 <p class="pricing-copy">
@@ -294,23 +282,13 @@
                                 <li>Free hosting included</li>
                             </ul>
 
-                            <form class="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post"
-                                target="_blank" data-package="Basic One-Page Portfolio Site" data-base-price="100">
-                                <input type="hidden" name="cmd" value="_xclick" />
-                                <input type="hidden" name="business" value="feliciamizula@paypal.com" />
-                                <input type="hidden" name="item_name" value="Basic One-Page Portfolio Site" />
-                                <input type="hidden" name="amount" value="100.00" data-amount-input />
-                                <input type="hidden" name="currency_code" value="USD" />
-                                <input type="hidden" name="charset" value="utf-8" />
-                                <input type="hidden" name="no_shipping" value="1" />
-                                <input type="hidden" name="custom" value="Basic package" data-custom-input />
-                                <button type="submit" class="btn btn-primary btn-block">
-                                    Buy Basic Package
-                                </button>
-                            </form>
+                            <button type="button" class="btn btn-primary btn-block package-select"
+                                data-package-select="One Page Personal Site">
+                                Choose Basic Package
+                            </button>
 
                             <p class="payment-note">
-                                Checkout opens securely in PayPal.
+                                Select this package, then finish checkout below.
                             </p>
                         </article>
 
@@ -320,7 +298,7 @@
                                 <p class="plan-name">Complete</p>
                                 <h3>Multi-page portfolio site</h3>
                                 <div class="price-row">
-                                    <span class="price" data-price-display data-base-price="250">$250</span>
+                                    <span class="price">$250</span>
                                     <span class="price-note">flat rate</span>
                                 </div>
                                 <p class="pricing-copy">
@@ -337,32 +315,67 @@
                                 <li>Free hosting included</li>
                             </ul>
 
-                            <form class="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post"
-                                target="_blank" data-package="Complete Multi-Page Portfolio Site" data-base-price="250">
-                                <input type="hidden" name="cmd" value="_xclick" />
-                                <input type="hidden" name="business" value="feliciamizula@paypal.com" />
-                                <input type="hidden" name="item_name" value="Complete Multi-Page Portfolio Site" />
-                                <input type="hidden" name="amount" value="250.00" data-amount-input />
-                                <input type="hidden" name="currency_code" value="USD" />
-                                <input type="hidden" name="charset" value="utf-8" />
-                                <input type="hidden" name="no_shipping" value="1" />
-                                <input type="hidden" name="custom" value="Complete package" data-custom-input />
-                                <button type="submit" class="btn btn-primary btn-block">
-                                    Buy Complete Package
-                                </button>
-                            </form>
+                            <button type="button" class="btn btn-primary btn-block package-select"
+                                data-package-select="Multi-page Personal Site">
+                                Choose Complete Package
+                            </button>
 
                             <p class="payment-note">
-                                Perfect for a fuller personal brand presence.
+                                Best if you want a larger site and more room for content.
                             </p>
                         </article>
                     </div>
 
+                    <div class="checkout-panel glass-card" id="checkout">
+                        <div class="checkout-copy">
+                            <p class="eyebrow muted">PayPal checkout</p>
+                            <h3>Complete your order</h3>
+                            <p>
+                                Choose the package you want, add any short notes PayPal should collect,
+                                and continue to secure checkout.
+                            </p>
+                        </div>
+
+                        <form class="paypal-checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="post"
+                            target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick" />
+                            <input type="hidden" name="hosted_button_id" value="2FHU4Z99V4THA" />
+
+                            <input type="hidden" name="on0" value="Package Type" />
+                            <label class="form-field" for="packageType">
+                                <span>Package Type</span>
+                                <select name="os0" id="packageType">
+                                    <option value="One Page Personal Site">One Page Personal Site $100.00 USD</option>
+                                    <option value="Multi-page Personal Site">Multi-page Personal Site $250.00 USD</option>
+                                </select>
+                            </label>
+
+                            <input type="hidden" name="on1" value="Resume and Personal Summary" />
+                            <label class="form-field" for="resumeSummary">
+                                <span>Resume and Personal Summary</span>
+                                <input type="text" id="resumeSummary" name="os1" maxlength="200"
+                                    placeholder="Paste a short note, link, or mention that you'll email it" />
+                            </label>
+
+                            <input type="hidden" name="on2" value="Requested Styles, Colors, Themes, etc." />
+                            <label class="form-field" for="styleNotes">
+                                <span>Requested Styles, Colors, Themes, etc.</span>
+                                <input type="text" id="styleNotes" name="os2" maxlength="200"
+                                    placeholder="Example: modern, dark navy, minimal, recruiter-friendly" />
+                            </label>
+
+                            <input type="hidden" name="currency_code" value="USD" />
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Continue to PayPal
+                            </button>
+                        </form>
+                    </div>
+
                     <div class="micro-note">
                         <p>
-                            Rush pricing updates automatically:
-                            <strong>Basic + Rush = $129</strong> and
-                            <strong>Complete + Rush = $279</strong>.
+                            If your materials are longer than PayPal's field limit, complete checkout
+                            first and then email the full content afterward.
                         </p>
                     </div>
                 </div>
@@ -420,8 +433,8 @@
                         <details class="faq-item">
                             <summary>How long does it take?</summary>
                             <p>
-                                Standard delivery is typically 3 business days. Rush delivery is
-                                available for same-day turnaround.
+                                Standard delivery is typically 3 business days after checkout and once
+                                your materials are received.
                             </p>
                         </details>
 
@@ -449,7 +462,7 @@
                     <div class="cta-actions">
                         <a class="btn btn-primary btn-lg" href="#pricing">Choose Package</a>
                         <a class="btn btn-secondary btn-lg"
-                            href="mailto:feliciamizula@paypal.com?subject=Portfolio%20Website%20Project">
+                            href="mailto:derekdperez.dev@gmail.com?subject=Portfolio%20Website%20Project">
                             Email Project Materials
                         </a>
                     </div>
